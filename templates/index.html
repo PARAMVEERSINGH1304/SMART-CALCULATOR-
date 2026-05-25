@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="calculator">
+
+        <h1>⚡ SMART  CALCULATOR</h1>
+
+        <div class="tabs">
+            <button onclick="showSection('basic')">Basic</button>
+            <button onclick="showSection('scientific')">Scientific</button>
+            <button onclick="showSection('conversion')">Conversion</button>
+        </div>
+
+        <input type="text" id="display" readonly>
+
+        <!-- BASIC -->
+        <div id="basic" class="section active">
+
+            <div class="buttons">
+
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('/')">÷</button>
+
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('*')">×</button>
+
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('-')">−</button>
+
+                <button onclick="appendValue('0')">0</button>
+                <button onclick="appendValue('.')">.</button>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendValue('+')">+</button>
+
+                <button class="equal" onclick="calculate()">=</button>
+
+            </div>
+        </div>
+
+        <!-- SCIENTIFIC -->
+        <div id="scientific" class="section">
+
+            <div class="buttons">
+
+                <button onclick="scientific('sin')">sin</button>
+                <button onclick="scientific('cos')">cos</button>
+                <button onclick="scientific('tan')">tan</button>
+                <button onclick="scientific('sqrt')">√</button>
+
+                <button onclick="scientific('log')">log</button>
+                <button onclick="appendValue('^')">xʸ</button>
+
+            </div>
+
+        </div>
+
+        <!-- CONVERSION -->
+        <div id="conversion" class="section">
+
+            <div class="buttons">
+
+                <button onclick="convert('cm_inch')">CM → Inch</button>
+                <button onclick="convert('inch_cm')">Inch → CM</button>
+
+                <button onclick="convert('kg_pound')">KG → Pound</button>
+                <button onclick="convert('pound_kg')">Pound → KG</button>
+
+                <button onclick="convert('c_f')">°C → °F</button>
+                <button onclick="convert('f_c')">°F → °C</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- HISTORY BUTTON -->
+
+<button class="history-toggle" onclick="toggleHistory()">
+    📜 History
+</button>
+
+<!-- HISTORY PANEL -->
+
+<div class="history" id="historyPanel">
+
+    <div class="history-header">
+
+        <h2>📜 HISTORY</h2>
+
+        <button id="clear-history-btn" onclick="clearHistory()">
+            🗑 Delete
+        </button>
+
+    </div>
+
+    <div id="history-list"></div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+body{
+    background:black;
+    color:#00ff88;
+    font-family:monospace;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.calculator{
+    background:#050505;
+    border:2px solid #00ff88;
+    padding:25px;
+    border-radius:15px;
+    width:350px;
+    box-shadow:0 0 25px #00ff88;
+}
+
+h1{
+    text-align:center;
+    font-size:22px;
+}
+
+.tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.tabs button{
+    flex:1;
+}
+
+#display{
+    width:100%;
+    height:60px;
+    background:black;
+    border:2px solid #00ff88;
+    color:#00ff88;
+    font-size:28px;
+    margin-bottom:20px;
+    text-align:right;
+    padding-right:10px;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+button{
+    background:black;
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:15px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#00ff88;
+    color:black;
+    box-shadow:0 0 15px #00ff88;
+}
+
+.equal{
+    grid-column:span 4;
+}
+
+.section{
+    display:none;
+}
+
+.active{
+    display:block;
+}
+
+/* HISTORY BUTTON */
+
+.history-toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    padding:12px 20px;
+    z-index:1000;
+    border-radius:10px;
+}
+
+/* HISTORY PANEL */
+
+.history{
+    position:fixed;
+    right:-370px;
+    top:0;
+    width:320px;
+    height:100vh;
+    background:#050505;
+    border-left:2px solid #00ff88;
+    box-shadow:0 0 20px #00ff88;
+    padding:20px;
+    transition:0.4s;
+    overflow-y:auto;
+    z-index:999;
+}
+
+.history.show{
+    right:0;
+}
+
+.history-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:60px;
+    margin-bottom:20px;
+}
+
+#clear-history-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+#clear-history-btn:hover{
+    background:#ff4444;
+    color:white;
+}
+
+.history-item{
+    padding:10px;
+    margin-bottom:10px;
+    border:1px solid #00ff88;
+    border-radius:8px;
+    word-break:break-word;
+}
