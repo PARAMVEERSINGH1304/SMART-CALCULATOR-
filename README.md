@@ -1,4 +1,4 @@
-# ⚡ Smart Hacker Calculator
+# ⚡ Smart  Calculator
 
 A full-stack calculator application developed using Python Flask, JavaScript, HTML, and CSS.
 
